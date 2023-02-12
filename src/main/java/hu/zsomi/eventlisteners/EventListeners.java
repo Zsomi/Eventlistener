@@ -1,10 +1,7 @@
 package hu.zsomi.eventlisteners;
 
-import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
+import hu.zsomi.eventlisteners.listeners.BedLeaveEventListener;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerBedLeaveEvent;
-import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class EventListeners extends JavaPlugin implements Listener {
@@ -13,21 +10,6 @@ public final class EventListeners extends JavaPlugin implements Listener {
     public void onEnable() {
         System.out.println("The plugin loaded!");
 
-        getServer().getPluginManager().registerEvents(this, this);
-        getServer().getPluginManager().registerEvents(this, this);
-
+        getServer().getPluginManager().registerEvents(new BedLeaveEventListener(),this);
     }
-
-    @EventHandler
-    public void onPlayerJoin(PlayerJoinEvent e) {
-        e.setJoinMessage("Hi Player!");
-    }
-
-    @EventHandler
-    public void onBedLeaveEvent(PlayerBedLeaveEvent e) {
-        Player player = e.getPlayer();
-        player.setHealth(2);
-    }
-
-
 }
