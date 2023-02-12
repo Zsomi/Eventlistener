@@ -1,0 +1,8 @@
+name: EventListeners
+version: '${project.version}'
+main: hu.zsomi.eventlisteners.EventListeners
+api-version: 1.19
+prefix: EventListeners
+load: STARTUP
+authors: [ Zsomi ]
+description: Evenlistener gyakorlat.
