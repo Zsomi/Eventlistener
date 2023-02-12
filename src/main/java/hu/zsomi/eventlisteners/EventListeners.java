@@ -1,6 +1,5 @@
 package hu.zsomi.eventlisteners;
 
-import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
@@ -18,6 +17,8 @@ public final class EventListeners extends JavaPlugin implements Listener {
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent e) {
-        System.out.println("A palyer joined the server!");
+        e.setJoinMessage("Hi Player!");
     }
+
+
 }
